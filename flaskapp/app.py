@@ -1,16 +1,7 @@
 #from flask import Flask, redirect, url_for, request, send_from_directory, render_template
 from flask import *
-import subprocess
 
-proc = subprocess.check_output("ipconfig" ).decode('utf-8')
-print (proc)
-
-app = Flask(__name__, template_folder='html')
-
-
-@app.route('/theJUUL')
-def main():
-    return send_from_directory('html','juul.html')
+app = Flask(__name__, template_folder='templates')
 
 # home page
 @app.route('/')
